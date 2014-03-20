@@ -31,7 +31,7 @@ public class MainActivity extends FragmentActivity implements LocationListener {
     //////////-Gestion Google Map-//////////
         gMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
         server = new ServerStub();
-        createMarker(5);
+        createMarker();
         
     //////////-Gestion Accelerometre-//////////
         SensorManager handler = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -102,8 +102,8 @@ public class MainActivity extends FragmentActivity implements LocationListener {
     @Override
     public void onStatusChanged(final String provider, final int status, final Bundle extras) { }
     
-    public void createMarker(int nbAleat){
-    	server.genMarkersInfo(nbAleat);
+    public void createMarker(){
+    	server.genMarkersInfo();
     }
     
     public void placeMarker(){

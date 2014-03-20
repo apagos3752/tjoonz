@@ -13,24 +13,17 @@ public class ServerStub {
 	}
 	
 	 
-	public void genMarkersInfo(int nbAleat){
+	public void genMarkersInfo(){
 		
-		this.createAndAddUserInfo("Iduine", "Song1", 48.115195, -1.640156);
-		this.createAndAddUserInfo("Okazari", "Song2", 48.115219, -1.640072);
-		this.createAndAddUserInfo("Cisco", "Song3", 48.115198, -1.639971);
-		this.createAndAddUserInfo("Zev", "Song1", 48.115265, -1.640042);
+		this.createAndAddUserInfo("Iduine", "Octopus", 48.115195, -1.640156);
+		this.createAndAddUserInfo("Okazari", "Deconstrukt", 48.115219, -1.640072);
+		this.createAndAddUserInfo("Cisco", "KissMyLips", 48.115198, -1.639971);
+		this.createAndAddUserInfo("Zev", "Raptor", 48.115265, -1.640042);
+		this.createAndAddUserInfo("Koopa", "Legends", 35.093911, -87.858114);
+		this.createAndAddUserInfo("Masskass", "SmellYourD*ck", 36.240363, 138.194081);
+		this.createAndAddUserInfo("Peach", "GloryHole", -33.581606, 150.245096);
+		this.createAndAddUserInfo("Teijiro", "Decisions", -29.077322, -38.186912);
 
-		for (int i=0; i<nbAleat ; i++){
-			
-			double minLat = -90.00;
-		    double maxLat = 90.00;      
-		    double latitude = minLat + (double)(Math.random() * ((maxLat - minLat) + 1));
-		    double minLon = 0.00;
-		    double maxLon = 180.00;     
-		    double longitude = minLon + (double)(Math.random() * ((maxLon - minLon) + 1));
-		    DecimalFormat df = new DecimalFormat("#.#####");
-			this.createAndAddUserInfo(Integer.toString(i), "Song"+Integer.toString(i), latitude, longitude);
-		}		
 	}
 	
 	public HashMap<String, UserInfo> getData() {
@@ -46,7 +39,7 @@ public class ServerStub {
 	public static void main(String[] args){
 		
 		ServerStub ss = new ServerStub();
-		ss.genMarkersInfo(5);
+		ss.genMarkersInfo();
 		HashMap<String, UserInfo> hm = ss.getData();
 		for(String key: hm.keySet()){
 			System.out.println(hm.get(key).toString());
